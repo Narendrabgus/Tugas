@@ -1,0 +1,31 @@
+<!-- <!DOCTYPE html> -->
+<html>
+<head>
+    <title>Jquery : Ajax display JSON data</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#method1").click(function () {
+                MethodOne();
+            });
+        });
+
+        //method 1
+        function MethodOne() {
+            $.getJSON("process.php", function (response) {
+                $("result1").html (response.satu);
+                $("result2").html (response.dua);
+                $("result3").html (response.tiga);
+            });
+        }
+    </script>
+</head>
+<body>
+    <input id="method1" type="button" value="Json Method 1"/>
+
+    <div id="result"></div>
+    <div id="result2"></div>
+    <div id="result3"></div>
+</body>
+</html>
